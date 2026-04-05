@@ -28,6 +28,12 @@ class MemorialPage {
     if (nameEl && CONFIG.MEMORIAL_NAME) {
       nameEl.textContent = CONFIG.MEMORIAL_NAME;
     }
+
+    const photoEl = document.getElementById('memorialPhoto');
+    if (photoEl && CONFIG.MEMORIAL_PHOTO_URL) {
+      photoEl.src = CONFIG.MEMORIAL_PHOTO_URL;
+      photoEl.alt = CONFIG.MEMORIAL_NAME;
+    }
     
     // Update page title
     document.title = `In Memory of ${CONFIG.MEMORIAL_NAME}`;
