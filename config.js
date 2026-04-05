@@ -24,7 +24,7 @@ const CONFIG = {
     namePlaceholder: 'Your name (optional)',
     messagePlaceholder: 'Share a memory, a thought, a moment...',
     noTributesYet: 'No messages yet. Be the first to share.',
-    submissionSuccess: 'Thank you. Your message will appear after review.',
+    submissionSuccess: 'Thank you. Your message will appear pending admin approval.',
     submissionError: 'Something went wrong. Please try again.',
     adminTitle: 'Pending Messages',
     adminApprove: 'Approve',
