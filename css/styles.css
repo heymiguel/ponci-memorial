@@ -126,7 +126,7 @@ body {
   position: relative;
 }
 
-/* Geometric divider line above name */
+/* Geometric divider line above photo */
 .memorial-header::before {
   content: '';
   position: absolute;
@@ -135,6 +135,22 @@ body {
   width: 80px;
   height: 3px;
   background: var(--color-accent);
+}
+
+.memorial-photo {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1; /* Square aspect ratio */
+  object-fit: cover;
+  margin-bottom: var(--spacing-lg);
+  border: var(--border-width) solid var(--color-border);
+  display: block;
+}
+
+/* Hide photo if no src is set */
+.memorial-photo[src=""],
+.memorial-photo:not([src]) {
+  display: none;
 }
 
 .memorial-name {
