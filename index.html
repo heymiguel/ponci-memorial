@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In Memory of Ponci</title>
+  
+  <!-- Fonts - Playfair Display (angular serif) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Configuration -->
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- =================================================================== -->
+    <!-- HOME VIEW -->
+    <!-- =================================================================== -->
+    
+    <div id="homeView" class="view active">
+      <header class="memorial-header">
+        <h1 class="memorial-name" id="memorialName">Ponci</h1>
+        <p class="memorial-subtitle">In loving memory</p>
+      </header>
+
+      <div class="action-buttons">
+        <button id="viewTributesBtn" class="btn btn-primary">
+          View Tributes
+        </button>
+        <button id="leaveTributeBtn" class="btn btn-secondary">
+          Leave a Tribute
+        </button>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- TRIBUTES VIEW -->
+    <!-- =================================================================== -->
+    
+    <div id="tributesView" class="view">
+      <header class="view-header">
+        <button id="backBtn" class="btn-back" aria-label="Back to home">
+          ← Back
+        </button>
+        <h2>Messages</h2>
+      </header>
+
+      <div id="tributesList" class="tributes-list">
+        <!-- Messages loaded here by JavaScript -->
+      </div>
+
+      <div class="action-buttons">
+        <button id="leaveTributeBtn2" class="btn btn-primary">
+          Leave a Tribute
+        </button>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- FORM VIEW -->
+    <!-- =================================================================== -->
+    
+    <div id="formView" class="view">
+      <header class="view-header">
+        <h2>Leave a Message</h2>
+      </header>
+
+      <form id="tributeForm" class="tribute-form">
+        <div class="form-group">
+          <label for="nameInput">Your name (optional)</label>
+          <input 
+            type="text" 
+            id="nameInput" 
+            class="form-input"
+            placeholder="Your name"
+            maxlength="100"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="messageInput">Your message *</label>
+          <textarea 
+            id="messageInput" 
+            class="form-input"
+            placeholder="Share a memory, a thought, a moment..."
+            required
+            maxlength="1000"
+            rows="6"
+          ></textarea>
+          <div class="form-hint">Your message will appear after review</div>
+        </div>
+
+        <div id="formMessage" class="form-message"></div>
+
+        <div class="form-actions">
+          <button type="button" id="cancelBtn" class="btn btn-secondary">
+            Cancel
+          </button>
+          <button type="submit" id="submitBtn" class="btn btn-primary">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/sheets-api.js"></script>
+  <script src="js/memorial.js"></script>
+  
+  <!-- reCAPTCHA (loaded dynamically if configured) -->
+</body>
+</html>

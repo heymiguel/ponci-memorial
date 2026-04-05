@@ -1,0 +1,486 @@
+/* ==========================================================================
+   Memorial Site - Mobile-First Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Variables (easy theming)
+   ========================================================================== */
+
+:root {
+  /* Colors - Dark mode navy + red (Ponci's palette) */
+  --color-primary: #e8edf3;        /* Light text on dark */
+  --color-secondary: #8b9eb5;      /* Muted blue-gray */
+  --color-accent: #c41e3a;         /* Superman red (sparingly) */
+  --color-text: #d4dce6;           /* Main text */
+  --color-text-light: #7a8a9e;    /* Secondary text */
+  --color-background: #0a1018;     /* Deep navy-black background */
+  --color-surface: #141d29;        /* Slightly lighter surface */
+  --color-border: #1f2937;         /* Subtle borders */
+  --color-error: #c41e3a;
+  --color-success: #2a9d8f;
+  
+  /* Typography - Angular serif */
+  --font-family: 'Playfair Display', Georgia, serif;
+  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-base: 17px;
+  --font-size-lg: 19px;
+  --font-size-xl: 32px;
+  --font-size-xxl: 56px;           /* Large, dramatic */
+  --line-height: 1.7;
+  
+  /* Spacing - Generous whitespace */
+  --spacing-xs: 12px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 72px;
+  
+  /* Borders - Angular, thin (comic panel style) */
+  --border-radius: 0px;
+  --border-radius-sm: 0px;
+  --border-radius-lg: 0px;
+  --border-width: 2px;
+  
+  /* Shadows - None (flat design) */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  
+  /* Transitions */
+  --transition: all 0.15s ease;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  font-family: var(--font-family-body);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Full page background space for future visual */
+  background-image: url(''); /* Add background image URL here */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Views (single-page app states)
+   ========================================================================== */
+
+.view {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Headers
+   ========================================================================== */
+
+.memorial-header {
+  text-align: left;
+  margin-bottom: var(--spacing-xxl);
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+}
+
+/* Geometric divider line above name */
+.memorial-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.memorial-name {
+  font-size: var(--font-size-xxl);
+  font-weight: 400;
+  font-family: var(--font-family); /* Playfair Display */
+  letter-spacing: -0.01em;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.memorial-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  font-weight: 300;
+  font-family: var(--font-family-body);
+  letter-spacing: 0.01em;
+}
+
+.view-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: var(--border-width) solid var(--color-border);
+  position: relative;
+}
+
+/* Geometric accent on divider */
+.view-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 64px;
+  height: 4px;
+  background: var(--color-accent);
+}
+
+.view-header h2 {
+  flex: 1;
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  font-family: var(--font-family); /* Playfair Display */
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  padding: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.btn-back:hover {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-family-body);
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background-color: var(--color-accent); /* Superman red */
+  color: white;
+  border: var(--border-width) solid var(--color-accent);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #a81830; /* Darker red on hover */
+  border-color: #a81830;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-secondary);
+  background-color: transparent;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align */
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xxl);
+}
+
+.action-buttons .btn {
+  min-width: 240px; /* Give buttons some width but not full width */
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+.tribute-form,
+.login-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-body);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  line-height: var(--line-height);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: var(--color-surface);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-hint {
+  margin-top: var(--spacing-xs);
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+.form-message {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  display: none;
+}
+
+.form-message.error {
+  background-color: #fee;
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.form-message.success {
+  background-color: #efe;
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+/* ==========================================================================
+   Tributes List
+   ========================================================================== */
+
+.tributes-list {
+  margin-bottom: var(--spacing-xl);
+}
+
+.tribute-card {
+  background: var(--color-surface);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  border: var(--border-width) solid var(--color-border);
+  position: relative;
+}
+
+/* Angular corner accent (top-left) */
+.tribute-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  border-top: var(--border-width) solid var(--color-accent);
+  border-left: var(--border-width) solid var(--color-accent);
+}
+
+.tribute-name {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+  font-size: 15px;
+  font-family: var(--font-family-body);
+  letter-spacing: 0.01em;
+}
+
+.tribute-message {
+  color: var(--color-text);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height);
+  font-family: var(--font-family-body);
+}
+
+.tribute-date {
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin-top: var(--spacing-sm);
+  font-weight: 400;
+}
+
+.no-tributes,
+.loading,
+.error {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-light);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+/* ==========================================================================
+   Print Styles (in case someone wants to print messages)
+   ========================================================================== */
+
+@media print {
+  .action-buttons,
+  .btn-back,
+  .header-actions {
+    display: none;
+  }
+  
+  .tribute-card {
+    break-inside: avoid;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    max-width: 800px; /* Constrain width on desktop so it doesn't stretch too wide */
+  }
+  
+  .memorial-name {
+    font-size: 72px; /* Bigger on desktop */
+  }
+  
+  .action-buttons {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .action-buttons .btn {
+    min-width: 200px;
+  }
+  
+  .admin-panel-header {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  /* Form stays comfortable width on desktop */
+  .tribute-form,
+  .login-form {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: var(--spacing-xxl);
+    max-width: 900px; /* Even more constrained on large screens */
+  }
+  
+  .memorial-name {
+    font-size: 84px;
+  }
+}
+
+/* ==========================================================================
+   Print Styles (in case someone wants to print tributes)
+   ========================================================================== */
+
+@media print {
+  .action-buttons,
+  .btn-back,
+  .header-actions {
+    display: none;
+  }
+  
+  .tribute-card {
+    break-inside: avoid;
+  }
+}
