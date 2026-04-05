@@ -121,8 +121,8 @@ body {
 
 .memorial-header {
   text-align: left;
-  margin-bottom: var(--spacing-xxl);
-  padding: var(--spacing-xxl) 0;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md) 0;
   position: relative;
 }
 
@@ -143,7 +143,6 @@ body {
   aspect-ratio: 1 / 1; /* Square aspect ratio */
   object-fit: cover;
   margin-bottom: var(--spacing-lg);
-  border: var(--border-width) solid var(--color-border);
   display: block;
 }
 
@@ -273,7 +272,7 @@ body {
   flex-direction: column;
   align-items: flex-start; /* Already left-aligned */
   gap: var(--spacing-md);
-  margin-top: var(--spacing-xxl);
+  margin-top: var(--spacing-xs);
 }
 
 .action-buttons .btn {
