@@ -8,7 +8,7 @@ const CONFIG = {
   APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxD7rEfkjz3SYvIC7RmsZt4olE7WgcbLGVaUiBKrZVw9f8PSkOjKCp0Z3l5hj7Ix_wOYA/exec', // From Apps Script deployment
   
   // reCAPTCHA (optional but recommended)
-  RECAPTCHA_SITE_KEY: 'YOUR_RECAPTCHA_SITE_KEY_HERE', // Leave empty to disable
+  RECAPTCHA_SITE_KEY: '6Lc2XKcsAAAAACu_C53oV2qlnSglDLiJV6zVnJAj', // Leave empty to disable
   
   // Memorial Details
   MEMORIAL_NAME: 'Ponci', // Name to display

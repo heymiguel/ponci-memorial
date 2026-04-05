@@ -1,9 +1,9 @@
 // =============================================================================
 // Google Apps Script - Memorial Site Backend
 // =============================================================================
-// Deploy this as a Web App with "Execute as: Me" and "Access: Anyone"
+// Deploy this as a Web App 
 
-const RECAPTCHA_SECRET_KEY = 'YOUR_RECAPTCHA_SECRET_KEY_HERE'; // From reCAPTCHA admin
+const RECAPTCHA_SECRET_KEY = '6Lc2XKcsAAAAAG1Kxj_GFaru0wGCVBknaZSiX90Z'; // From reCAPTCHA admin
 const SHEET_NAME = 'messages'; // Name of your sheet tab
 
 // =============================================================================
