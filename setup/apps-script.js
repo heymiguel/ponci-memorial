@@ -3,7 +3,7 @@
 // =============================================================================
 // Deploy this as a Web App 
 
-const RECAPTCHA_SECRET_KEY = '6Lc2XKcsAAAAAG1Kxj_GFaru0wGCVBknaZSiX90Z'; // From reCAPTCHA admin
+const RECAPTCHA_SECRET_KEY = 'remove-me'; // From reCAPTCHA admin
 const SHEET_NAME = 'messages'; // Name of your sheet tab
 
 // =============================================================================
