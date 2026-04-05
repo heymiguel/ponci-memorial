@@ -12,6 +12,7 @@ const CONFIG = {
   
   // Memorial Details
   MEMORIAL_NAME: 'Ponci', // Name to display
+  MEMORIAL_PHOTO_URL:'https://i.postimg.cc/P55W758C/506488118-10161243822376024-3337848425727522507-n.jpg', // blank to hide
   
   // UI Text (customize as needed)
   TEXT: {
